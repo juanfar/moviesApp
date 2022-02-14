@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActorsService, CompaniesService, MoviesService } from '@core/services';
 import { Store } from '@ngrx/store';
-import { loadMovies } from '@store/actions/movies.actions';
+import { loadActors, loadMovies } from '@store/actions';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -23,5 +23,6 @@ export class AppComponent implements OnInit {
     this.companiesService.getCompanies().subscribe(response => console.log(response));
 
     this.store.dispatch(loadMovies());
+    this.store.dispatch(loadActors());
   }
 }
