@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActorsService, CompaniesService, MoviesService } from './core/services';
+import { ActorsService, CompaniesService, MoviesService } from '@core/services';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
