@@ -8,6 +8,7 @@
       "@core/*": [ "src/app/core/*" ],
       "@features/*": [ "src/app/features/*" ],
       "@shared/*": [ "src/app/shared/*" ],
+      "@store/*": [ "src/app/store/*" ],
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
