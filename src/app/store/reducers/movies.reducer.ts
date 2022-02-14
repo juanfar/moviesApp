@@ -7,13 +7,13 @@ export interface MoviesState {
   movies: Movie[]
 }
 
-export const initialState: MoviesState = {
+export const moviesInitialState: MoviesState = {
   loading: false,
   movies: []
 }
 
 export const MoviesReducer = createReducer(
-  initialState,
+  moviesInitialState,
   on(loadMovies, (state) => {
     return {...state, loading: true}
   }),

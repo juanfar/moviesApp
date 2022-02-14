@@ -1,10 +1,12 @@
 import { ActionReducerMap } from "@ngrx/store";
-import { MoviesReducer, MoviesState } from "./reducers/movies.reducer";
+import { ActorsReducer, ActorsState, MoviesReducer, MoviesState } from "./reducers";
 
 export interface AppState {
   moviesState: MoviesState;
+  actorState: ActorsState;
 }
 
 export const ROOT_REDUCERS: ActionReducerMap<AppState> = {
   moviesState: MoviesReducer,
+  actorState: ActorsReducer,
 }
