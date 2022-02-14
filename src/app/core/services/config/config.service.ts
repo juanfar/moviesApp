@@ -13,7 +13,7 @@ export class ConfigService {
 
     static settings: AppConfig;
 
-    constructor(private http: HttpClient) { }
+    constructor(private readonly http: HttpClient) { }
 
     loadConfig(): Promise<AppConfig> {
         const jsonFile = `assets/config/config.${environment.name}.json`;

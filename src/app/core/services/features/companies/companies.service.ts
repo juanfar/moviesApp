@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Company } from '@shared/models';
 import { Observable } from 'rxjs';
 import { retry } from 'rxjs/operators';
-import { Company } from 'src/app/shared/models';
 import { ConfigService } from '../..';
 
 @Injectable({
