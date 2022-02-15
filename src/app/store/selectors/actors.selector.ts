@@ -1,6 +1,6 @@
 
 import { createSelector } from '@ngrx/store';
-import { ActorsState } from '@store/reducers/actors.reducer';
+import { ActorsState } from '../reducers/actors.reducer';
 import { AppState } from '../app.state';
  
 export const selectActorsFeature = (state: AppState) => state.actorState;

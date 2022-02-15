@@ -1,2 +1,3 @@
-export * from './actors.effect';
-export * from './movies.effect';
+export * from './actors.effects';
+export * from './movies.effects';
+export * from './companies.effects';

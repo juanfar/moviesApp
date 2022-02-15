@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActorsService, CompaniesService, MoviesService } from '@core/services';
 import { Store } from '@ngrx/store';
-import { loadActors, loadMovies } from '@store/actions';
+import { loadActors, loadCompanies, loadMovies } from '@store/actions';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -24,5 +24,6 @@ export class AppComponent implements OnInit {
 
     this.store.dispatch(loadMovies());
     this.store.dispatch(loadActors());
+    this.store.dispatch(loadCompanies());
   }
 }
