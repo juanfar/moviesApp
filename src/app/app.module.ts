@@ -10,7 +10,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { ROOT_REDUCERS } from '@store/app.state';
-import { ActorsEffects, MoviesEffects } from '@store/effects';
+import { ActorsEffects, CompaniesEffects, MoviesEffects } from '@store/effects';
 
 function initializeApp(appConfig: ConfigService) {
   return () => appConfig.loadConfig();
@@ -24,7 +24,7 @@ function initializeApp(appConfig: ConfigService) {
     HttpClientModule,
     AppRoutingModule,
     StoreModule.forRoot(ROOT_REDUCERS),
-    EffectsModule.forRoot([MoviesEffects, ActorsEffects]),
+    EffectsModule.forRoot([MoviesEffects, ActorsEffects, CompaniesEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [
