@@ -11,6 +11,14 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { ROOT_REDUCERS } from '@store/app.state';
 import { ActorsEffects, CompaniesEffects, MoviesEffects } from '@store/effects';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+
 
 function initializeApp(appConfig: ConfigService) {
   return () => appConfig.loadConfig();
@@ -25,7 +33,14 @@ function initializeApp(appConfig: ConfigService) {
     AppRoutingModule,
     StoreModule.forRoot(ROOT_REDUCERS),
     EffectsModule.forRoot([MoviesEffects, ActorsEffects, CompaniesEffects]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonModule
+    
   ],
   providers: [
     {
