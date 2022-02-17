@@ -1,1 +1,1 @@
-<p>ui-movies-cards-container works!</p>
+<app-ui-movie-card *ngFor="let movie of movies; index as i; trackBy: identify" [itemMovie]="movie"></app-ui-movie-card>

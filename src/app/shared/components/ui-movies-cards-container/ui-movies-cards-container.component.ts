@@ -14,4 +14,8 @@ export class UiMoviesCardsContainerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  identify(index: number, item: Movie) {
+    return item.id;
+  }
+
 }
