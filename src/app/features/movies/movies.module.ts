@@ -4,6 +4,7 @@ import { MoviesRoutingModule } from './movie-routing.module';
 import { DetailMovieComponent } from './pages/detail-movie/detail-movie.component';
 import { HomeMovieComponent } from './pages/home-movie/home-movie.component';
 import { NewMovieComponent } from './pages/new-movie/new-movie.component';
+import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { NewMovieComponent } from './pages/new-movie/new-movie.component';
   ],
   imports: [
     CommonModule,
-    MoviesRoutingModule
+    MoviesRoutingModule,
+    SharedModule
   ]
 })
 export class MoviesModule { }
