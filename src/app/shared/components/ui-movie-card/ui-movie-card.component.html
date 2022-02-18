@@ -1,1 +1,10 @@
-<p>ui-movie-card works!</p>
+<div class="card" (click)=goToMovie(itemMovie.id)>
+  <img class="card__poster" [src]="itemMovie.poster ? itemMovie.poster : 'assets/img/movies/noimage.png'" alt="">
+  <div class="card__info">
+    <span class="title">{{itemMovie.title}}</span>
+    <div class="tags">
+      <small *ngIf="itemMovie.genre.length === 0">#Interesting</small>
+      <small *ngFor="let genre of itemMovie.genre">#{{genre}}</small>
+    </div>
+  </div>
+</div>
