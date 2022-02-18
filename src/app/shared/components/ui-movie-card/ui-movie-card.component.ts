@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-ui-movie-card',
@@ -8,9 +9,15 @@ import { Component, Input, OnInit } from '@angular/core';
 export class UiMovieCardComponent implements OnInit {
   @Input() itemMovie!: any;
 
-  constructor() { }
+  constructor(
+    private readonly router: Router,
+    private readonly route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
   }
 
+  goToMovie(movieId: number) {
+    console.log(movieId);
+  }
 }
