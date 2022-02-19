@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { retry } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { ConfigService } from '../../';
+import { ConfigService } from '../..';
 import { Movie } from '@shared/models';
 
 @Injectable({
