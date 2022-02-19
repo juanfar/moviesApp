@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActorsService, CompaniesService, MoviesService } from '@core/services';
 import { Store } from '@ngrx/store';
 import { loadActors, loadCompanies, loadMovies } from '@store/actions';
+import { selectMoviesLoading } from '@store/selectors';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,11 +19,11 @@ export class AppComponent implements OnInit {
     private readonly companiesService: CompaniesService
   ) { }
 
-  ngOnInit() {
-    this.moviesService.getMovies().subscribe(response => console.log(response));
-    this.actorsService.getActors().subscribe(response => console.log(response));
-    this.companiesService.getCompanies().subscribe(response => console.log(response));
+  ngOnInit(): void {
+    this.createStateData();
+  }
 
+  createStateData(): void {
     this.store.dispatch(loadMovies());
     this.store.dispatch(loadActors());
     this.store.dispatch(loadCompanies());
