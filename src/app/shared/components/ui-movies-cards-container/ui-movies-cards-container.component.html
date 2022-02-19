@@ -1,6 +1,6 @@
 <div class="page">
   <div class="grid" fxLayout="row wrap" fxLayoutGap="16px grid">
-    <app-ui-movie-card fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="33%" *ngFor="let movie of movies; index as i; trackBy: identify" [itemMovie]="movie">
+    <app-ui-movie-card fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="33%" *ngFor="let movie of movies; index as i; trackBy: identify" [itemMovie]="movie" (click)=isClicked(movie.id)>
     </app-ui-movie-card>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Movie } from '@shared/models';
 
 @Component({
@@ -8,6 +8,7 @@ import { Movie } from '@shared/models';
 })
 export class UiMoviesCardsContainerComponent implements OnInit {
   @Input() movies!: Movie[] | null;
+  @Output() clickedCardEvent = new EventEmitter<number>();
 
   constructor() { }
 
@@ -16,6 +17,10 @@ export class UiMoviesCardsContainerComponent implements OnInit {
 
   identify(index: number, item: Movie) {
     return item.id;
+  }
+
+  isClicked(movieId: number): void {
+    this.clickedCardEvent.emit(movieId);
   }
 
 }

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UtilsService } from '@features/movies/services';
 import { Movie } from '@shared/models';
-import { AppState } from '@store/app.state';
-import { selectMovies, selectMoviesLoading } from '@store/selectors';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -16,20 +15,28 @@ export class HomeMovieComponent implements OnInit {
   movies$: Observable<Movie[]> = new Observable();
 
   constructor(
-    private readonly store: Store<AppState>
+    private readonly utilsService: UtilsService,
+    private readonly route: ActivatedRoute,
+    private readonly router: Router,
   ) { }
 
   ngOnInit(): void {
-    this.fetchLoading();
-    this.movies$ = this.store.select(selectMovies);
+    this.getMovieLoadingStatus();
+    this.movies$ = this.utilsService.getMovies();
   }
 
   identify(index: number, movie: Movie) {
     return movie.id;
   }
 
-  fetchLoading(): void {
-    this.loading$ = this.store.select(selectMoviesLoading);
+  getMovieLoadingStatus(): void {
+    this.loading$ = this.utilsService.getMovieLoadingStatus()
+  }
+
+  navigateMovieDetail(movieId: number): void {
+    this.router.navigate(['detail-movie/' + movieId], {
+      relativeTo: this.route
+    });
   }
 
 }
