@@ -5,19 +5,25 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { UiMoviesCardsContainerComponent } from './components/ui-movies-cards-container/ui-movies-cards-container.component';
 import { UiMovieCardComponent } from './components/ui-movie-card/ui-movie-card.component';
+import { UiLoaderComponent } from './components/ui-loader/ui-loader.component';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 
 @NgModule({
   declarations: [
     UiMoviesCardsContainerComponent,
-    UiMovieCardComponent
+    UiMovieCardComponent,
+    UiLoaderComponent
   ],
   imports: [
     CommonModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    NgxSkeletonLoaderModule
   ],
   exports: [
-    UiMoviesCardsContainerComponent
+    UiMoviesCardsContainerComponent,
+    UiLoaderComponent,
+    NgxSkeletonLoaderModule
   ]
 })
 export class SharedModule { }

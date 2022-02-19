@@ -1,3 +1,4 @@
+<app-ui-loader *ngIf="loading$ | async"></app-ui-loader>
 <div class="page">
   <app-ui-movies-cards-container [movies]="movies$ | async"></app-ui-movies-cards-container>
 </div>
